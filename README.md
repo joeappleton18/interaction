@@ -1,5 +1,9 @@
 # Interaction Design
 
+#### Hosted site: https://joeappleton18.github.io/interaction/
+
+#### Github Repo: https://github.com/joeappleton18/
+
 ## Week 1
 
 - Styled components
