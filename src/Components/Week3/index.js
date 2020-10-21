@@ -17,19 +17,27 @@ const StyledButton = styled.button`
   border: 0;
   border-radius: 0.25rem;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0.3);
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   margin: 2%;
 `;
 
 const Button = (props) => {
-  const { children, color } = props;
-  return <StyledButton color={color}> {children} </StyledButton>;
+  const { children, color, disabled } = props;
+  return (
+    <StyledButton color={disabled ? "grey" : color} disabled={disabled}>
+      {" "}
+      {children}{" "}
+    </StyledButton>
+  );
 };
 
 const Week3 = () => {
   return (
     <StyledWrapper>
-      <Button color="#6200ee"> Button 1 </Button>
+      <Button color="#6200ee" disabled={true}>
+        {" "}
+        Button 1{" "}
+      </Button>
       <Button color="#1200ee"> Button 2 </Button>
       <Button color="#1280ee"> Button 3 </Button>
     </StyledWrapper>
