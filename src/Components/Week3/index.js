@@ -22,9 +22,13 @@ const StyledButton = styled.button`
 `;
 
 const Button = (props) => {
-  const { children, color, disabled } = props;
+  const { children, color, disabled, hoverColor, ...other } = props;
   return (
-    <StyledButton color={disabled ? "grey" : color} disabled={disabled}>
+    <StyledButton
+      color={disabled ? "grey" : color}
+      disabled={disabled}
+      {...other}
+    >
       {" "}
       {children}{" "}
     </StyledButton>
@@ -32,11 +36,15 @@ const Button = (props) => {
 };
 
 const Week3 = () => {
+  const handleMouseOver = (e) => {
+    debugger;
+    console.log("mouse is over me");
+  };
   return (
     <StyledWrapper>
-      <Button color="#6200ee" disabled={true}>
+      <Button onMouseOver={handleMouseOver} color="#6200ee">
         {" "}
-        Button 1{" "}
+        Button{" "}
       </Button>
       <Button color="#1200ee"> Button 2 </Button>
       <Button color="#1280ee"> Button 3 </Button>
