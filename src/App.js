@@ -8,16 +8,27 @@ import Week4 from "./Components/Week4";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-const StyledWrapper = styled.div`
-  display: flex;
-  alignitems: center;
-  aligncontent: center;
+const StyledNav = styled.ul`
+  margin: 0 auto;
+  justify-content: center;
+  height: 50px;
+  padding: 90px;
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.7);
+  width: 100px;
+  li {
+    list-style: none;
+    margin-right: 2%;
+  }
+`;
+
+const StyledHeader = styled.h1`
+  text-align: center;
 `;
 
 const Home = () => (
   <nav>
-    <h1> Welcome to Interaction Design!</h1>
-    <ul>
+    <StyledHeader> Welcome to Interaction Design!</StyledHeader>
+    <StyledNav>
       <li>
         <Link to="/week-1"> Week 1</Link>
       </li>
@@ -31,7 +42,11 @@ const Home = () => (
       <li>
         <Link to="/week-4"> Week 4</Link>
       </li>
-    </ul>
+
+      <li>
+        <Link to="/week-5"> Week 5</Link>
+      </li>
+    </StyledNav>
   </nav>
 );
 
