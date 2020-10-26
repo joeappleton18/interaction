@@ -21,7 +21,7 @@ const StyledButton = styled.button`
   margin: 2%;
 `;
 
-const Button = (props) => {
+export const Button = (props) => {
   const { children, color, disabled, hoverColor, ...other } = props;
   return (
     <StyledButton
