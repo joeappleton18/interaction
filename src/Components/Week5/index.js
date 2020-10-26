@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
-import closeIcon from "../../assets/close.svg"
-import { Button } from "../Week3/index"
+import closeIcon from "../../assets/close.svg";
+import { Button } from "../Week3/index";
+import { Swipeable } from 'react-swipeable'
 
 const StyledWrapper = styled.div`
     display: flex;
@@ -49,6 +50,8 @@ const StyledNav = styled.ul`
 
 const Week5 = () => {
 
+
+
     const [navOpen, setNavOpen] = useState(false);
     const handleOpen = () => {
         setNavOpen(true);
@@ -58,19 +61,33 @@ const Week5 = () => {
         setNavOpen(false);
     }
 
+    const handleSwipe = (event) => {
+
+        if (event.dir === "Right") {
+            setNavOpen(true);
+        }
+
+        if (event.dir === "Left") {
+            setNavOpen(false);
+        }
+
+    }
+
     return (
         <>
-            <StyledWrapper>
-                <StyleSideNav open={navOpen}>
-                    <StyledCloseIcon onClick={handleClose} src={closeIcon} />
-                    <StyledNav>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Privacy</li>
-                    </StyledNav>
-                </StyleSideNav>
-                <Button onClick={handleOpen} color="#1200ee"> Open Nav</Button>
-            </StyledWrapper>
+            <Swipeable onSwiped={handleSwipe}>
+                <StyledWrapper >
+                    <StyleSideNav open={navOpen}>
+                        <StyledCloseIcon onClick={handleClose} src={closeIcon} />
+                        <StyledNav>
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Privacy</li>
+                        </StyledNav>
+                    </StyleSideNav>
+                    <Button onClick={handleOpen} color="#1200ee"> Open Nav</Button>
+                </StyledWrapper>
+            </Swipeable>
         </>)
 }
 
