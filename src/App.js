@@ -47,6 +47,9 @@ const Home = () => (
       <li>
         <Link to="/week-5"> Week 5</Link>
       </li>
+      <li>
+        <Link to="/week-6"> Week 6</Link>
+      </li>
 
 
     </StyledNav>

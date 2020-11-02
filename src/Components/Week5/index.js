@@ -53,7 +53,7 @@ const StyledNav = styled.ul`
 
 const Week5 = () => {
 
-    const [navOpen, setNavOpen] = useState(true);
+    const [navOpen, setNavOpen] = useState(false);
 
     const handleClose = () => {
         setNavOpen(false);
@@ -62,24 +62,39 @@ const Week5 = () => {
         setNavOpen(true);
     }
 
+    const handleSwipe = (event) => {
+
+
+        if (event.dir === "Right") {
+            setNavOpen(true);
+        }
+
+        if (event.dir === "Left") {
+            setNavOpen(false);
+        }
+    }
+
 
 
     return (<>
-        <StyledWrapper>
-            <StyledSideNav open={navOpen}>
-                <StyledCloseIcon onClick={handleClose} src={closeIcon} />
-                {
-                    navOpen &&
-                    (<StyledNav>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Privacy</li>
-                    </StyledNav>)
-                }
-            </StyledSideNav>
+        <Swipeable onSwiped={handleSwipe}>
+            <StyledWrapper>
+                <StyledSideNav open={navOpen}>
+                    <StyledCloseIcon onClick={handleClose} src={closeIcon} />
+                    {
+                        navOpen &&
+                        (<StyledNav>
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Privacy</li>
+                        </StyledNav>)
+                    }
+                </StyledSideNav>
 
-            <Button onClick={handleOpen} color="#1200ee"> Open Nav </Button>
-        </StyledWrapper></>
+                <Button onClick={handleOpen} color="#1200ee"> Open Nav </Button>
+            </StyledWrapper>
+        </Swipeable>
+    </>
 
     )
 }
