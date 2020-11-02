@@ -34,7 +34,6 @@ const StyledNav = styled.ul`
     display: flex;
     color: white;
     flex-direction: column;
-
     & li {
         text-align: center;
         list-style: none;
@@ -76,15 +75,22 @@ const Week5 = () => {
     return (
         <>
             <Swipeable onSwiped={handleSwipe}>
+
                 <StyledWrapper >
-                    <StyleSideNav open={navOpen}>
-                        <StyledCloseIcon onClick={handleClose} src={closeIcon} />
-                        <StyledNav>
-                            <li>Home</li>
-                            <li>About</li>
-                            <li>Privacy</li>
-                        </StyledNav>
-                    </StyleSideNav>
+
+                    {
+                        <StyleSideNav open={navOpen}>
+                            <StyledCloseIcon onClick={handleClose} src={closeIcon} />
+                            {
+                                navOpen && (
+                                    <StyledNav>
+                                        <li>Home</li>
+                                        <li>About</li>
+                                        <li>Privacy</li>
+                                    </StyledNav>)
+                            }
+                        </StyleSideNav>
+                    }
                     <Button onClick={handleOpen} color="#1200ee"> Open Nav</Button>
                 </StyledWrapper>
             </Swipeable>

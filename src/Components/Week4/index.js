@@ -66,7 +66,10 @@ const Week4 = () => {
   const { register, handleSubmit, watch, errors } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    setSubmitted(true);
+    console.log(data);
+  }
 
   const handleClick = (e) => {
     setShowPassword(!showPassword);
@@ -76,7 +79,8 @@ const Week4 = () => {
     <StyledWrapper>
       <img src={runner} />
       <StyledHeader> Sally </StyledHeader>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      {submitted && <h1> You're all done</h1>}
+      {!submitted && (<form onSubmit={handleSubmit(onSubmit)}>
         <p>
           <StyledInput
             type="text"
@@ -103,7 +107,7 @@ const Week4 = () => {
         <p>
           <StyledButton> Login </StyledButton>
         </p>
-      </form>
+      </form>)}
     </StyledWrapper>
   );
 };
