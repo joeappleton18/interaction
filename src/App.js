@@ -6,6 +6,7 @@ import Week2 from "./Components/Week2";
 import Week3 from "./Components/Week3";
 import Week4 from "./Components/Week4";
 import Week5 from "./Components/Week5";
+import Week6 from "./Components/Week6";
 
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -74,6 +75,9 @@ function App() {
         </Route>
         <Route path="/week-5">
           <Week5 />
+        </Route>
+        <Route path="/week-6">
+          <Week6 />
         </Route>
         <Route path="/">
           <Home />
