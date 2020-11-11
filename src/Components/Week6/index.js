@@ -45,9 +45,9 @@ export const Menu = (props) => {
 
             {
                 open && (<StyledMenu >
-                    <li onClick={onClick}>Menu Item 1</li>
-                    <li onClick={onClick}>Menu Item 2 </li>
-                    <li onClick={onClick}>Menu Item 3</li>
+                    <li onClick={() => onClick("Bike")}>Bike</li>
+                    <li onClick={() => onClick("Swim")}>Swim </li>
+                    <li onClick={() => onClick("Run")}>Run</li>
                 </StyledMenu >)
 
             }
@@ -61,16 +61,26 @@ export const Menu = (props) => {
 const Week6 = () => {
 
     const [open, setOpen] = useState(false);
+    const [selectedItem, setSelectedItem] = useState("Walking");
 
-    const handleClick = () => {
+    const handleClick = (item) => {
+
         setOpen(!open);
     }
+
+    const handleMenClick = (item) => {
+        setOpen(!open);
+        setSelectedItem(item);
+    }
+
+
+
 
     return (
         <StyledWrapper>
 
-            <Button color="#1200ee" onClick={handleClick}> Click to Open  </Button>
-            <Menu open={open} onClick={handleClick} />
+            <Button color="#1200ee" onClick={handleClick}> {selectedItem}  </Button>
+            <Menu open={open} onClick={handleMenClick} />
         </StyledWrapper>)
 }
 
