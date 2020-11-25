@@ -3,6 +3,7 @@ import styled from "styled-components";
 import runner from "../../assets/running-lady.png";
 import hideIcon from "../../assets/hide.svg";
 import showIcon from "../../assets/show.svg";
+
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -80,7 +81,9 @@ const Week4 = () => {
       <img src={runner} />
       <StyledHeader> Sally </StyledHeader>
       {submitted && <h1> You're all done</h1>}
-      {!submitted && (<form onSubmit={handleSubmit(onSubmit)}>
+      {!submitted && (
+      
+      <form onSubmit={handleSubmit(onSubmit)}>
         <p>
           <StyledInput
             type="text"

@@ -63,7 +63,7 @@ const Week6 = () => {
     const [open, setOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState("Walking");
 
-    const handleClick = (item) => {
+    const handleClick = () => {
 
         setOpen(!open);
     }

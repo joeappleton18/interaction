@@ -8,6 +8,8 @@ import Week4 from "./Components/Week4";
 import Week5 from "./Components/Week5";
 import Week6 from "./Components/Week6";
 import Week7 from "./Components/Week7";
+import Week8 from "./Components/Week8";
+import Week9 from "./Components/Week9";
 
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -15,7 +17,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 const StyledNav = styled.ul`
   margin: 0 auto;
   justify-content: center;
-  height: 50px;
+  height: 200px;
   padding: 90px;
   box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.7);
   width: 100px;
@@ -55,6 +57,12 @@ const Home = () => (
       <li>
         <Link to="/week-7"> Week 7</Link>
       </li>
+      <li>
+        <Link to="/week-8"> Week 8</Link>
+      </li>
+      <li>
+        <Link to="/week-9"> Week 9</Link>
+      </li>
 
 
     </StyledNav>
@@ -85,6 +93,12 @@ function App() {
         </Route>
         <Route path="/week-7">
           <Week7 />
+        </Route>
+        <Route path="/week-8">
+          <Week8 />
+        </Route>
+        <Route path="/week-9">
+          <Week9 />
         </Route>
         <Route path="/">
           <Home />

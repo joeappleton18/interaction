@@ -1,26 +1,15 @@
 import React from 'react';
 
-const Togggle = () => {
-    return (
-
-        <>
-            <p> Test </p>
-            <input type="checkbox" />
-            <label class="toggle-switch-label" for="toggleSwitch">
-                <span class="toggle-switch-inner"></span>
-                <span class="toggle-switch-switch"></span>
-            </label>
-
-
-        </>
-
-    );
-}
-
-
 const Week7 = () => {
-
-    return <Togggle />
+     /**
+      * Develop a form 
+      *     - User feedback!
+      *         - Linking feedback to validation? 
+      *         - When do we show our validation?
+      *             - After first submit
+      *             - Validation to update dynamically
+      */
+    return <h1>Week 7</h1>
 }
 
 export default Week7;
