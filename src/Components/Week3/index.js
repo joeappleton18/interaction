@@ -46,8 +46,8 @@ const Week3 = () => {
         {" "}
         Button{" "}
       </Button>
-      <Button color="#1200ee"> Button 2 </Button>
-      <Button color="#1280ee"> Button 3 </Button>
+      <Button color="#1199ee"> Button 2 </Button>
+      <Button color="#1279ee"> Button 3 </Button>
     </StyledWrapper>
   );
 };

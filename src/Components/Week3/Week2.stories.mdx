@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import { Button } from "./";
+import dog from "./dog.jpeg";
+
+<Meta title="Week Three Buttons" />
+
+<img src={dog} />
+
+# Heading
+
+This is paragraph text
+
+## Button Light Blue
+
+This is my button in light blue
+
+<Canvas>
+  <Story name="Light Blue">
+    <Button color="#1280ee"> Button 2 </Button>
+  </Story>
+</Canvas>
+
+## Button Odd Green
+
+[This is a test](http://www.google.com)
+
+<Canvas>
+  <Story name="Odd Green">
+    <Button color="#1ee"> Button 2 </Button>
+  </Story>
+</Canvas>
